@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "f95eefa6-3a49-4426-9b55-b4dc072f7bb0",
+		"name": "assignment user auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28969831",
+		"_collection_link": "https://lunar-crater-873608.postman.co/workspace/Subsys~19ced298-eac7-45a2-8beb-3144b4f369a1/collection/28969831-f95eefa6-3a49-4426-9b55-b4dc072f7bb0?action=share&source=collection_link&creator=28969831"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"preetimoolya@gmail.com\",\r\n    \"password\":\"P@ssw0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}api/auth/login",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Preeti\",\r\n    \"email\":\"preetimoolya@gmail.com\",\r\n    \"password\":\"P@ssw0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "api/auth/register",
+					"host": [
+						"api"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"P@ssw0rd\",\r\n    \"newPassword\":\"P@ssw0rdd\",\r\n    \"confirmPassword\":\"P@ssw0rdd\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://user-auth-system-be.onrender.com/api/auth/reset-password",
+					"protocol": "https",
+					"host": [
+						"user-auth-system-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
